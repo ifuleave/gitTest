@@ -44,21 +44,21 @@ public class PageRequestDTO {
 
     public String getLink() {
         if (link == null) {
-            StringBuilder stringBuilder  = new StringBuilder();
-            stringBuilder.append("page=" + this.page);
-            stringBuilder.append("&size=" + this.size);
+            StringBuilder builder = new StringBuilder();
+            builder.append("page=" + this.page);
+            builder.append("&size=" + this.size);
 
             if (type != null && type.length() > 0) {
-                stringBuilder.append("&type=" + this.type);
+                builder.append("&type=" + type);
 
             }
             if (keyword != null) {
                 try {
-                    stringBuilder.append("&keyword=" + URLEncoder.encode(keyword, "UTF-8"));
+                    builder.append("&keyword=" + URLEncoder.encode(keyword, "UTF-8"));
                 } catch (UnsupportedEncodingException e) {
                 }
             }
-            link = stringBuilder.toString();
+            link = builder.toString();
         }
         return link;
     }
