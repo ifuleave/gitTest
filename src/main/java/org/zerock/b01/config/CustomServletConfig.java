@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc // 어노테이션 중요 SwaggerConfig 클래스 에러시
-public class CustomServletConfig implements WebMvcConfigurer {
+public class CustomServletConfig implements WebMvcConfigurer { //spring web 관련설정
 
     @Override //board/list와 swagger-ui가 모두 정상적으로 나오게 하기 위해 처리
     public void  addResourceHandlers(ResourceHandlerRegistry registry){
