@@ -13,7 +13,6 @@ import org.zerock.b01.domain.Board;
 import org.zerock.b01.domain.Reply;
 
 
-
 @SpringBootTest
 @Log4j2
 public class ReplyRepositoryTests {
@@ -31,6 +30,7 @@ public class ReplyRepositoryTests {
         replyRepository.save(reply);
     }
 
+
     @Transactional
     @Test
     public void testBoardReplies() {
@@ -39,10 +39,11 @@ public class ReplyRepositoryTests {
 
         Pageable pageable = PageRequest.of(0,10, Sort.by("rno").descending());
 
-        Page<Reply> result = replyRepository.listOfBoard(bno,pageable);
+        Page<Reply> result = replyRepository.listOfBoard(bno, pageable);
 
         result.getContent().forEach(reply -> {
             log.info(reply);
         });
     }
+
 }
