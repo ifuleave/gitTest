@@ -14,3 +14,20 @@ async function addReply(replyObj){
     const response = await axios.post(`/replies/`,replyObj)
     return response.data
 }
+
+async function getReply(rno){
+    const response = await axios.get(`/replies/${rno}`)
+    return response.data
+}
+
+async function modifyReply(replyObj){
+    const response = await axios.put(`/replies/${replyObj.rno}`,replyObj)
+    return response.data
+}
+
+//댓글 삭제
+
+async function removeReply(rno) {
+    const response = await axios.delete(`/replies/${rno}`)
+    return response.data
+}
